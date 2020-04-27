@@ -50,7 +50,6 @@ class PeopleListFragment : BaseFragment() {
     }
 
     private fun initListeners() {
-
         peopleAdapter.clickListener = {
 
         }
