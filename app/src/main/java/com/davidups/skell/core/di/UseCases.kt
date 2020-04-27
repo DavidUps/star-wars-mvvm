@@ -1,9 +1,9 @@
 package com.davidups.skell.core.di
 
-import com.davidups.skell.features.authentication.usescases.UseCaseExample
+import com.davidups.skell.features.people.usecases.GetPeople
 import org.koin.dsl.module
 
 val useCaseModule = module {
 
-    factory { UseCaseExample(get()) }
+    factory { GetPeople(get()) }
 }

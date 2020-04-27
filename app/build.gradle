@@ -28,7 +28,7 @@ android {
         Preproduction {
             dimension "enviroment"
             buildConfigField "String", "ENVIRONMENT", "\"PRE\""
-            buildConfigField "String", "ENVIRONMENT_URL", "\"https://swapi.co/api/\""
+            buildConfigField "String", "ENVIRONMENT_URL", "\"https://swapi.dev/api/\""
             buildConfigField "String", "IMAGE_MEME_URL", "\"https://www.fanthatracks.com/wp-content/uploads/2018/08/obi-wan-grievous-hi-there_1.jpg\""
         }
 

@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 import com.davidups.skell.BuildConfig
 import com.davidups.skell.core.platform.ContextHandler
 import com.davidups.skell.core.platform.NetworkHandler
-import kotlinx.coroutines.CoroutineDispatcher
+import com.davidups.skell.features.people.view.adapters.PeopleAdapter
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -43,6 +43,8 @@ val applicationModule = module(override = true) {
             Context.MODE_PRIVATE
         )
     }
+
+    factory { PeopleAdapter() }
 }
 
 
