@@ -33,8 +33,6 @@ Yapp/src/main/java/com/davidups/skell/features/people/view/fragments/PeopleListF
 Wapp/src/main/java/com/davidups/skell/features/people/view/viewmodels/PeopleViewmodel.kt,7/d/7d94338fe5856041da6585e4d55dd284efb600d8
 j
 :app/src/main/java/com/davidups/skell/core/di/ViewModels.kt,2/5/25fe4a0ba1d7c4e84144e14bd7cf3b70d3f7b8c4
-_
-/app/src/main/res/navigation/main_navigation.xml,e/c/ec3b8410bb370c47ba0f9e7414a62eba886eefae
 h
 8app/src/main/java/com/davidups/skell/core/di/Database.kt,0/4/04c2793c05781e86f7e64953052676fccd090cd1
 P

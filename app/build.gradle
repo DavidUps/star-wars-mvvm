@@ -55,6 +55,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -127,4 +131,10 @@ dependencies {
     // Google Maps
     // Permissions implementation
     implementation 'ru.superjob:kotlin-permissions:1.0.3'
+
+    kapt "com.android.databinding:compiler:3.6.3"
+}
+
+kapt {
+    generateStubs = true
 }

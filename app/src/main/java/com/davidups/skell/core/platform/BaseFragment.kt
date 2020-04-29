@@ -1,26 +1,31 @@
 package com.davidups.skell.core.platform
 
-import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.davidups.skell.R
+import androidx.viewbinding.ViewBinding
 import com.davidups.skell.core.navigation.MainActivity
 import kotlinx.android.synthetic.main.navigation_activity.*
 import org.koin.android.ext.android.inject
 
-abstract class BaseFragment: Fragment() {
+abstract class BaseFragment<VB : ViewBinding>: Fragment() {
 
-    abstract fun layoutId(): Int
+    abstract fun inflateBinding(inflater: LayoutInflater?,
+                                @Nullable container: ViewGroup?,
+                                @Nullable savedInstanceState: Bundle?): VB?
 
-    private val viewModelFactory: ViewModelProvider.Factory by inject()
+    protected var viewBinding: VB? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
-        inflater.inflate(layoutId(), container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        viewBinding = inflateBinding(inflater, container, savedInstanceState)
+        return viewBinding!!.root
+    }
+
+    internal fun getBinding() = viewBinding
 
     internal fun showProgress() = progressStatus(View.VISIBLE)
 
