@@ -8,4 +8,6 @@ class PeopleService(retrofit: Retrofit) : PeopleApi {
 
     override suspend fun getPeople() = peopleApi.getPeople()
 
+    override suspend fun getPeopleByPage(page: Int) = peopleApi.getPeopleByPage(page)
+
 }

@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/btnAccesibility"
-        android:title="Comunidad"/>
+        android:id="@+id/movies"
+        android:title="Movies"
+        app:showAsAction="always"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_movies"/>
 
     <item
-        android:id="@+id/btnEvents"
-        android:title="Mapa"/>
+        android:id="@+id/people"
+        android:title="People"
+        app:showAsAction="always"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_people"/>
 
     <item
-        android:id="@+id/btnNews"
-        android:title="Noticias"/>
+        android:id="@+id/planets"
+        android:title="Planets"
+        app:showAsAction="always"
+        android:orderInCategory="3"
+        android:icon="@drawable/ic_planets"/>
 
     <item
-        android:id="@+id/btnSpecialist"
-        android:title="Mensajes" />
+        android:id="@+id/starships"
+        android:title="Starships"
+        app:showAsAction="always"
+        android:orderInCategory="4"
+        android:icon="@drawable/ic_starships"/>
 
-    <item
-        android:id="@+id/btnProfile"
-        android:title="Perfil" />
 </menu>

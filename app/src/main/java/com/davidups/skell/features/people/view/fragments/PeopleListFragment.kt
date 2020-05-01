@@ -6,8 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.davidups.skell.R
+import com.davidups.skell.core.extensions.showInfoAlertDialog
 import com.davidups.skell.core.platform.BaseFragment
 import com.davidups.skell.databinding.FragmentPeopleBinding
 import com.davidups.skell.features.people.models.view.PeopleView
@@ -16,7 +17,6 @@ import com.davidups.skell.features.people.view.viewmodels.PeopleViewModel
 import com.davidups.starwars.core.extensions.failure
 import com.davidups.starwars.core.extensions.observe
 import com.kotlinpermissions.notNull
-import kotlinx.android.synthetic.main.fragment_people.*
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -25,8 +25,10 @@ class PeopleListFragment : BaseFragment<FragmentPeopleBinding>() {
     private val peopleViewmodel: PeopleViewModel by viewModel()
     private val peopleAdapter: PeopleAdapter by inject()
 
-    private var _binding :FragmentPeopleBinding? = null
+    private var _binding: FragmentPeopleBinding? = null
     private val binding get() = _binding!!
+
+    private var people = PeopleView.empty()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +53,7 @@ class PeopleListFragment : BaseFragment<FragmentPeopleBinding>() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): FragmentPeopleBinding? {
-        _binding = FragmentPeopleBinding.inflate(inflater!!,container!!, false)
+        _binding = FragmentPeopleBinding.inflate(inflater!!, container!!, false)
         return binding
     }
 
@@ -68,11 +70,23 @@ class PeopleListFragment : BaseFragment<FragmentPeopleBinding>() {
         peopleAdapter.clickListener = {
 
         }
+
+        binding.rvPeople.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val linearLayoutManager = binding.rvPeople.layoutManager as GridLayoutManager
+                if (linearLayoutManager != null && linearLayoutManager.findLastCompletelyVisibleItemPosition() == peopleAdapter.collection.size - 1) {
+                    peopleViewmodel.loadMorePeople(people.toPeople().toPeopleEntity())
+                }
+            }
+        })
     }
 
     private fun handlePeople(peopleView: PeopleView?) {
-        peopleView.notNull {
-            peopleAdapter.collection = it.results.orEmpty()
+        peopleView.notNull { peopleView ->
+            people.next = peopleView.next
+            people.results!!.addAll(peopleView.results!!.toMutableList())
+            peopleAdapter.collection = peopleView.results.orEmpty()
         }
     }
 
@@ -81,8 +95,8 @@ class PeopleListFragment : BaseFragment<FragmentPeopleBinding>() {
     }
 
     private fun handleFailure(failure: Throwable?) {
-        Log.w("holi", "people ")
+        showInfoAlertDialog {
+            setTitle(getString(R.string.common_error))
+        }
     }
-
-
 }

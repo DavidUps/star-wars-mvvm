@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.*
 interface PeopleRepository {
 
     fun people(): Flow<Result<PeopleView>>
+    fun peopleByPage(page: Int): Flow<Result<PeopleView>>
 
     class Network(
         private val ioDispatcher: CoroutineDispatcher,
@@ -27,6 +28,22 @@ interface PeopleRepository {
 
 
         private suspend fun getPeopleFromApi() = service.getPeople()
+            .run {
+                if (isSuccessful && body() != null) {
+                    Success(body()!!.toPeople().toPeopleView())
+                } else {
+                    Error(Throwable("s"))
+                }
+            }
+
+        override fun peopleByPage(page: Int) =
+            flow {
+                emit(getPeopleByPageFromApi())
+            }
+                .catch { emit(Error(Throwable("s"))) }
+                .flowOn(ioDispatcher)
+
+        private suspend fun getPeopleByPageFromApi() = service.getPeople()
             .run {
                 if (isSuccessful && body() != null) {
                     Success(body()!!.toPeople().toPeopleView())
