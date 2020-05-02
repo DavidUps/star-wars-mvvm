@@ -86,7 +86,7 @@ class PeopleListFragment : BaseFragment<FragmentPeopleBinding>() {
         peopleView.notNull { peopleView ->
             people.next = peopleView.next
             people.results!!.addAll(peopleView.results!!.toMutableList())
-            peopleAdapter.collection = peopleView.results.orEmpty()
+            peopleAdapter.collection = people.results.orEmpty()
         }
     }
 

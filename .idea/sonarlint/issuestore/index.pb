@@ -75,3 +75,5 @@ s
 Capp/src/main/java/com/davidups/skell/core/extensions/AlertDialog.kt,2/c/2c3423ff2b93969fcc13bd8ef6931f98ffffb5e5
 €
 Papp/src/main/java/com/davidups/skell/features/people/usecases/GetPeopleByPage.kt,2/d/2df9fb70ccce4e44ede8d405d9cd12f5e0316672
+z
+Japp/src/main/java/com/davidups/skell/features/movies/MoviesListFragment.kt,a/f/af6eed779c6306e21726fa0eba5fc960807e57db

@@ -38,12 +38,12 @@ interface PeopleRepository {
 
         override fun peopleByPage(page: Int) =
             flow {
-                emit(getPeopleByPageFromApi())
+                emit(getPeopleByPageFromApi(page))
             }
                 .catch { emit(Error(Throwable("s"))) }
                 .flowOn(ioDispatcher)
 
-        private suspend fun getPeopleByPageFromApi() = service.getPeople()
+        private suspend fun getPeopleByPageFromApi(page:Int) = service.getPeopleByPage(page)
             .run {
                 if (isSuccessful && body() != null) {
                     Success(body()!!.toPeople().toPeopleView())
