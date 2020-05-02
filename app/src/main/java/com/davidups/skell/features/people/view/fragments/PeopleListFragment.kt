@@ -5,9 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.davidups.skell.R
+import com.davidups.skell.core.extensions.Constants
 import com.davidups.skell.core.extensions.showInfoAlertDialog
 import com.davidups.skell.core.platform.BaseFragment
 import com.davidups.skell.databinding.FragmentPeopleBinding
@@ -68,7 +71,8 @@ class PeopleListFragment : BaseFragment<FragmentPeopleBinding>() {
 
     private fun initListeners() {
         peopleAdapter.clickListener = {
-
+            val bundle = bundleOf(Constants.People.PERSON to it)
+            view?.findNavController()?.navigate(R.id.action_people_to_person, bundle)
         }
 
         binding.rvPeople.addOnScrollListener(object : RecyclerView.OnScrollListener() {

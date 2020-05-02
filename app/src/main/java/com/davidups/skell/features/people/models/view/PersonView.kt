@@ -2,6 +2,7 @@ package com.davidups.skell.features.people.models.view
 
 import com.davidups.skell.features.people.models.data.Person
 import com.davidups.skell.core.extensions.empty
+import java.io.Serializable
 
 data class PersonView(
     var name: String?,
@@ -13,7 +14,7 @@ data class PersonView(
     var birth_year: String?,
     var gender: String?,
     var homeworld: String
-) {
+) : Serializable {
 
     companion object {
         fun empty() =

@@ -33,6 +33,9 @@ class PeopleAdapter : RecyclerView.Adapter<PeopleAdapter.ViewHolder>() {
         fun bind(person: PersonView, clickListener: (PersonView) -> Unit, isFooter: Boolean) {
             itemView.ivBanner.loadFromUrl(String.randomImage())
             itemView.tvName.text = person.name
+            itemView.cvPerson.setOnClickListener {
+                clickListener(person)
+            }
         }
 
     }

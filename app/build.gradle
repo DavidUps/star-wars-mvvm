@@ -82,10 +82,10 @@ dependencies {
     kapt 'androidx.room:room-compiler:2.2.0'
     compileOnly "javax.annotation:jsr250-api:1.0"
     compileOnly "javax.inject:javax.inject:1"
-    implementation "org.jetbrains.anko:anko:0.10.4"
     implementation "com.squareup.retrofit2:converter-gson:2.6.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.0.1"
     implementation 'androidx.room:room-runtime:2.2.0'
+    implementation "androidx.core:core-ktx:1.2.0"
 
     // KOIN
     implementation 'org.koin:koin-android:2.0.1'

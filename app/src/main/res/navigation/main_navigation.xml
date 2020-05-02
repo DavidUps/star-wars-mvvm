@@ -10,10 +10,21 @@
         android:name="com.davidups.skell.features.movies.MoviesListFragment"
         android:label="Movies"
         tools:layout="@layout/fragment_movies"/>
+
     <fragment
         android:id="@+id/people"
         android:name="com.davidups.skell.features.people.view.fragments.PeopleListFragment"
         android:label="People"
-        tools:layout="@layout/fragment_people"/>
+        tools:layout="@layout/fragment_people">
+        <action
+            android:id="@+id/action_people_to_person"
+            app:destination="@id/person" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/person"
+        android:name="com.davidups.skell.features.people.view.fragments.PersonDetailFragment"
+        android:label="Person"
+        tools:layout="@layout/fragment_person"/>
 
 </navigation>
