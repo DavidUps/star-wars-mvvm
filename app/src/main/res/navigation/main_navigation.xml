@@ -3,7 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/movies">
+    app:startDestination="@id/authentication">
+
+    <fragment
+        android:id="@+id/authentication"
+        android:name="com.davidups.starwars.features.authentication.view.fragments.AuthenticationFragment"
+        android:label="Authentication"
+        tools:layout="@layout/fragment_authentication">
+        <action
+            android:id="@+id/action_authentication_to_movies"
+            app:destination="@id/movies" />
+    </fragment>
 
     <fragment
         android:id="@+id/movies"
@@ -13,7 +23,7 @@
 
     <fragment
         android:id="@+id/people"
-        android:name="com.davidups.skell.features.people.view.fragments.PeopleListFragment"
+        android:name="com.davidups.starwars.features.people.view.fragments.PeopleListFragment"
         android:label="People"
         tools:layout="@layout/fragment_people">
         <action
@@ -23,7 +33,7 @@
 
     <fragment
         android:id="@+id/person"
-        android:name="com.davidups.skell.features.people.view.fragments.PersonDetailFragment"
+        android:name="com.davidups.starwars.features.people.view.fragments.PersonDetailFragment"
         android:label="Person"
         tools:layout="@layout/fragment_person"/>
 
