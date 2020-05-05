@@ -90,39 +90,6 @@ lint/tmp/
 
 # GoogleServices
 app/google-services.json
-Sera borrado .idea/sonarlint/issuestore/0/3/
-Sera borrado .idea/sonarlint/issuestore/0/4/
-Sera borrado .idea/sonarlint/issuestore/0/9/
-Sera borrado .idea/sonarlint/issuestore/1/
-Sera borrado .idea/sonarlint/issuestore/2/
-Sera borrado .idea/sonarlint/issuestore/3/8/
-Sera borrado .idea/sonarlint/issuestore/4/1/
-Sera borrado .idea/sonarlint/issuestore/4/9/
-Sera borrado .idea/sonarlint/issuestore/4/f/
-Sera borrado .idea/sonarlint/issuestore/5/1/
-Sera borrado .idea/sonarlint/issuestore/5/6/
-Sera borrado .idea/sonarlint/issuestore/5/7/
-Sera borrado .idea/sonarlint/issuestore/5/9/
-Sera borrado .idea/sonarlint/issuestore/6/
-Sera borrado .idea/sonarlint/issuestore/7/7/
-Sera borrado .idea/sonarlint/issuestore/7/d/
-Sera borrado .idea/sonarlint/issuestore/8/a/
-Sera borrado .idea/sonarlint/issuestore/9/2/
-Sera borrado .idea/sonarlint/issuestore/9/4/
-Sera borrado .idea/sonarlint/issuestore/9/a/
-Sera borrado .idea/sonarlint/issuestore/9/d/
-Sera borrado .idea/sonarlint/issuestore/9/e/
-Sera borrado .idea/sonarlint/issuestore/a/0/
-Sera borrado .idea/sonarlint/issuestore/a/7/
-Sera borrado .idea/sonarlint/issuestore/a/8/
-Sera borrado .idea/sonarlint/issuestore/a/f/
-Sera borrado .idea/sonarlint/issuestore/b/1/
-Sera borrado .idea/sonarlint/issuestore/b/5/
-Sera borrado .idea/sonarlint/issuestore/b/d/
-Sera borrado .idea/sonarlint/issuestore/b/f/
-Sera borrado .idea/sonarlint/issuestore/c/4/
-Sera borrado .idea/sonarlint/issuestore/c/b/
-Sera borrado .idea/sonarlint/issuestore/d/9/
-Sera borrado .idea/sonarlint/issuestore/d/f/
-Sera borrado .idea/sonarlint/issuestore/e/
-Sera borrado .idea/sonarlint/issuestore/f/4/f49efb5c57502c03e8b7228159a5216c184614f9
+
+# Other Things
+local.properties
