@@ -6,10 +6,10 @@ import com.davidups.skell.core.extensions.cancelIfActive
 import com.davidups.starwars.core.functional.Success
 import com.davidups.starwars.core.functional.Error
 import com.davidups.skell.core.interactor.UseCase
-import com.davidups.skell.core.platform.BaseViewModel
+import com.davidups.starwars.core.platform.BaseViewModel
 import com.davidups.skell.features.people.models.entity.PeopleEntity
 import com.davidups.skell.features.people.models.view.PeopleView
-import com.davidups.skell.features.people.usecases.GetPeople
+import com.davidups.starwars.features.people.usecases.GetPeople
 import com.davidups.skell.features.people.usecases.GetPeopleByPage
 import com.kotlinpermissions.notNull
 import kotlinx.coroutines.flow.catch

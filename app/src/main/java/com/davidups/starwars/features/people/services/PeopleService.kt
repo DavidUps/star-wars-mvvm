@@ -1,6 +1,5 @@
-package com.davidups.skell.features.people.services
+package com.davidups.starwars.features.people.services
 
-import com.davidups.starwars.features.people.services.PeopleApi
 import retrofit2.Retrofit
 
 class PeopleService(retrofit: Retrofit) : PeopleApi {

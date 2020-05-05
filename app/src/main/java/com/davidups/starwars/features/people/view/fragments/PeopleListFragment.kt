@@ -9,7 +9,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.davidups.skell.R
-import com.davidups.skell.core.extensions.Constants
+import com.davidups.starwars.core.extensions.Constants
 import com.davidups.skell.core.extensions.showInfoAlertDialog
 import com.davidups.starwars.core.platform.BaseFragment
 import com.davidups.skell.databinding.FragmentPeopleBinding

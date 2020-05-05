@@ -9,5 +9,5 @@ val viewModelModule = module {
 
     viewModel { PeopleViewModel(get(), get()) }
 
-    viewModel { AuthenticationViewModel(get(), get()) }
+    viewModel { AuthenticationViewModel(get(), get(), get(), get()) }
 }

@@ -1,17 +1,17 @@
 package com.davidups.starwars.features.people.usecases
 
 import com.davidups.starwars.core.functional.Error
-import com.davidups.starwars.core.functional.Result
+import com.davidups.starwars.core.functional.State
 import com.davidups.starwars.core.functional.Success
 import com.davidups.skell.features.people.models.view.PeopleView
-import com.davidups.skell.features.people.services.PeopleService
+import com.davidups.starwars.features.people.services.PeopleService
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
 
 interface PeopleRepository {
 
-    fun people(): Flow<Result<PeopleView>>
-    fun peopleByPage(page: Int): Flow<Result<PeopleView>>
+    fun people(): Flow<State<PeopleView>>
+    fun peopleByPage(page: Int): Flow<State<PeopleView>>
 
     class Network(
         private val ioDispatcher: CoroutineDispatcher,

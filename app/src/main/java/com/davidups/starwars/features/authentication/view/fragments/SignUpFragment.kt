@@ -11,6 +11,7 @@ import com.davidups.starwars.core.platform.BaseFragment
 import com.davidups.skell.databinding.FragmentSignUpBinding
 import com.davidups.starwars.core.extensions.failure
 import com.davidups.starwars.core.extensions.observe
+import com.davidups.starwars.features.authentication.models.view.UserView
 import com.davidups.starwars.features.authentication.view.viewmodels.AuthenticationViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -45,7 +46,15 @@ class SignUpFragment(container: ViewGroup) : BaseFragment<FragmentSignUpBinding>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initListeners()
+    }
 
+    private fun initListeners() {
+
+        binding.btnSignIn.setOnClickListener {
+            val user = UserView(binding.etEmail.text.toString(), binding.etPassword.text.toString())
+            authenticationViewModel.signUp(user)
+        }
     }
 
     private fun handleAuth(b: Boolean?) {

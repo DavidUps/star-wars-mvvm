@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.davidups.skell.core.extensions.Constants
+import com.davidups.starwars.core.extensions.Constants
 import com.davidups.skell.core.extensions.loadFromUrl
 import com.davidups.skell.core.extensions.randomImage
 import com.davidups.starwars.core.platform.BaseFragment

@@ -40,6 +40,8 @@ class SignInFragment(container: ViewGroup) : BaseFragment<FragmentSignInBinding>
         with(authenticationViewModel) {
             observe(showSpinner, ::handleShowSpinner)
             observe(auth, ::handleAuth)
+            observe(putUserResponse, ::handlePutUser)
+            observe(getUserResponse, ::handleGetUser)
             failure(failure, ::handleFailure)
         }
     }
@@ -51,7 +53,6 @@ class SignInFragment(container: ViewGroup) : BaseFragment<FragmentSignInBinding>
     }
 
     private fun initListeners() {
-
         binding.btnSignIn.setOnClickListener {
             val user = UserView(binding.etEmail.text.toString(), binding.etPassword.text.toString())
             authenticationViewModel.signIn(user)
@@ -59,6 +60,15 @@ class SignInFragment(container: ViewGroup) : BaseFragment<FragmentSignInBinding>
     }
 
     private fun handleAuth(b: Boolean?) {
+        val user = UserView(binding.etEmail.text.toString(), binding.etPassword.text.toString())
+        authenticationViewModel.putUser(user)
+    }
+
+    private fun handlePutUser(b: Boolean?) {
+        authenticationViewModel.getUser()
+    }
+
+    private fun handleGetUser(user: UserView?) {
         view?.findNavController()?.navigate(R.id.action_authentication_to_movies)
     }
 
