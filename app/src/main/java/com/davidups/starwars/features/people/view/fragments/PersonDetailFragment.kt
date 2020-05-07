@@ -4,24 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.davidups.skell.R
 import com.davidups.starwars.core.extensions.Constants
 import com.davidups.skell.core.extensions.loadFromUrl
 import com.davidups.skell.core.extensions.randomImage
 import com.davidups.starwars.core.platform.BaseFragment
 import com.davidups.skell.databinding.FragmentPersonBinding
 import com.davidups.skell.features.people.models.view.PersonView
+import com.davidups.starwars.core.platform.viewBinding.viewBinding
 
-class PersonDetailFragment: BaseFragment<FragmentPersonBinding>() {
+class PersonDetailFragment: BaseFragment(R.layout.fragment_person) {
 
-    var _binding: FragmentPersonBinding? = null
-    val binding get() = _binding!!
+    val binding by viewBinding(FragmentPersonBinding::bind)
 
     private var people = PersonView.empty()
-
-    override fun inflateBinding(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): FragmentPersonBinding? {
-        _binding = FragmentPersonBinding.inflate(inflater!!, container!!, false)
-        return _binding
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,5 +37,4 @@ class PersonDetailFragment: BaseFragment<FragmentPersonBinding>() {
         binding.tvGender.text = "Gender: ${people.gender}"
         binding.tvHeight.text = "Height: ${people.height}"
     }
-
 }

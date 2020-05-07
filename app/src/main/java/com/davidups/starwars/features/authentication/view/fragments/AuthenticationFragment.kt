@@ -12,6 +12,7 @@ import com.davidups.starwars.core.platform.BaseFragment
 import com.davidups.skell.databinding.FragmentAuthenticationBinding
 import com.davidups.starwars.core.extensions.failure
 import com.davidups.starwars.core.extensions.observe
+import com.davidups.starwars.core.platform.viewBinding.viewBinding
 import com.davidups.starwars.features.authentication.view.adapters.AuthenticationViewPagerAdapter
 import com.davidups.starwars.features.authentication.view.viewmodels.AuthenticationViewModel
 import com.google.android.material.tabs.TabLayoutMediator
@@ -19,24 +20,13 @@ import kotlinx.android.synthetic.main.fragment_authentication.*
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class AuthenticationFragment: BaseFragment<FragmentAuthenticationBinding>() {
+class AuthenticationFragment: BaseFragment(R.layout.fragment_authentication) {
 
-    var _binding: FragmentAuthenticationBinding? = null
-    val binding get() = _binding!!
+    val binding by viewBinding(FragmentAuthenticationBinding::bind)
 
     private lateinit var container: ViewGroup
 
     private lateinit var authenticationAdapter: AuthenticationViewPagerAdapter
-
-    override fun inflateBinding(
-        inflater: LayoutInflater?,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): FragmentAuthenticationBinding? {
-        this.container = container!!
-        _binding = FragmentAuthenticationBinding.inflate(inflater!!, container!!, false)
-        return _binding
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -55,7 +45,7 @@ class AuthenticationFragment: BaseFragment<FragmentAuthenticationBinding>() {
         }
 
         authenticationAdapter.collection =
-            mutableListOf(SignInFragment(container), SignUpFragment(container))
+            mutableListOf(SignInFragment(), SignUpFragment())
     }
 
     private fun initListners() {

@@ -18,17 +18,16 @@ import com.davidups.skell.features.people.view.adapters.PeopleAdapter
 import com.davidups.starwars.features.people.view.viewmodels.PeopleViewModel
 import com.davidups.starwars.core.extensions.failure
 import com.davidups.starwars.core.extensions.observe
+import com.davidups.starwars.core.platform.viewBinding.viewBinding
 import com.kotlinpermissions.notNull
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class PeopleListFragment : BaseFragment<FragmentPeopleBinding>() {
+class PeopleListFragment : BaseFragment(R.layout.fragment_people) {
 
     private val peopleViewmodel: PeopleViewModel by viewModel()
     private val peopleAdapter: PeopleAdapter by inject()
-
-    private var _binding: FragmentPeopleBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding(FragmentPeopleBinding::bind)
 
     private var people = PeopleView.empty()
 
@@ -48,15 +47,6 @@ class PeopleListFragment : BaseFragment<FragmentPeopleBinding>() {
         initView()
         initListeners()
         binding.tvName.text
-    }
-
-    override fun inflateBinding(
-        inflater: LayoutInflater?,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): FragmentPeopleBinding? {
-        _binding = FragmentPeopleBinding.inflate(inflater!!, container!!, false)
-        return binding
     }
 
     private fun initView() {

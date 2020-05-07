@@ -1,22 +1,14 @@
-package com.davidups.skell.features.movies
+package com.davidups.starwars.features.movies
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.davidups.skell.R
 import com.davidups.starwars.core.platform.BaseFragment
 import com.davidups.skell.databinding.FragmentMoviesBinding
+import com.davidups.starwars.core.platform.viewBinding.viewBinding
 
-class MoviesListFragment: BaseFragment<FragmentMoviesBinding>() {
+class MoviesListFragment: BaseFragment(R.layout.fragment_movies) {
 
-    var _binding: FragmentMoviesBinding? = null
-    val binding get() = _binding!!
-
-    override fun inflateBinding(
-        inflater: LayoutInflater?,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): FragmentMoviesBinding? {
-        _binding = FragmentMoviesBinding.inflate(inflater!!, container!!, false)!!
-        return binding
-    }
+    val binding by viewBinding(FragmentMoviesBinding::bind)
 }

@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/movies"
-        android:name="com.davidups.skell.features.movies.MoviesListFragment"
+        android:name="com.davidups.starwars.features.movies.MoviesListFragment"
         android:label="Movies"
         tools:layout="@layout/fragment_movies"/>
 

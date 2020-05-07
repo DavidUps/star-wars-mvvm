@@ -11,27 +11,17 @@ import com.davidups.starwars.core.platform.BaseFragment
 import com.davidups.skell.databinding.FragmentSignUpBinding
 import com.davidups.starwars.core.extensions.failure
 import com.davidups.starwars.core.extensions.observe
+import com.davidups.starwars.core.platform.viewBinding.viewBinding
 import com.davidups.starwars.features.authentication.models.view.UserView
 import com.davidups.starwars.features.authentication.view.viewmodels.AuthenticationViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class SignUpFragment(container: ViewGroup) : BaseFragment<FragmentSignUpBinding>() {
+class SignUpFragment() : BaseFragment(R.layout.fragment_sign_up) {
 
     private val authenticationViewModel: AuthenticationViewModel by viewModel()
 
-    var _binding: FragmentSignUpBinding? = null
-    val binding get() = _binding!!
+    val binding by viewBinding(FragmentSignUpBinding::bind)
 
-    val container = container
-
-    override fun inflateBinding(
-        inflater: LayoutInflater?,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): FragmentSignUpBinding? {
-        _binding = FragmentSignUpBinding.inflate(inflater!!, this.container,false)
-        return binding
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
