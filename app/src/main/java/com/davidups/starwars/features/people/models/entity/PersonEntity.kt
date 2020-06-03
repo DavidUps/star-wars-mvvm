@@ -1,6 +1,6 @@
 package com.davidups.skell.features.people.models.entity
 
-import com.davidups.skell.features.people.models.data.Person
+import com.davidups.starwars.features.people.models.data.Person
 import com.davidups.skell.core.extensions.empty
 
 data class PersonEntity(

@@ -1,4 +1,4 @@
-package com.davidups.skell.features.people.models.data
+package com.davidups.starwars.features.people.models.data
 
 import com.davidups.skell.features.people.models.entity.PersonEntity
 import com.davidups.skell.features.people.models.view.PersonView

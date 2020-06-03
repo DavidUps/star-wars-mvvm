@@ -17,9 +17,9 @@
 
     <fragment
         android:id="@+id/movies"
-        android:name="com.davidups.starwars.features.movies.MoviesListFragment"
+        android:name="com.davidups.starwars.features.movies.view.fragments.MoviesListFragment"
         android:label="Movies"
-        tools:layout="@layout/fragment_movies"/>
+        tools:layout="@layout/fragment_movies" />
 
     <fragment
         android:id="@+id/people"
@@ -35,6 +35,18 @@
         android:id="@+id/person"
         android:name="com.davidups.starwars.features.people.view.fragments.PersonDetailFragment"
         android:label="Person"
-        tools:layout="@layout/fragment_person"/>
+        tools:layout="@layout/fragment_person" />
+
+    <fragment
+        android:id="@+id/planets"
+        android:name="com.davidups.starwars.features.planets.views.fragments.PlanetsListFragment"
+        android:label="Planets"
+        tools:layout="@layout/fragment_planets"/>
+
+    <fragment
+        android:id="@+id/starships"
+        android:name="com.davidups.starwars.features.starships.views.fragments.StarshipsListFragment"
+        android:label="Starships"
+        tools:layout="@layout/fragment_starships"/>
 
 </navigation>

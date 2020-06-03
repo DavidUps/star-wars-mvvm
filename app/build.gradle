@@ -105,7 +105,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     testImplementation 'org.mockito:mockito-inline:3.0.0'
-    implementation 'androidx.databinding:viewbinding:3.6.3'
     //UI Testing
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
@@ -124,6 +123,7 @@ dependencies {
     implementation 'ru.superjob:kotlin-permissions:1.0.3'
     // DataBinding
     kapt "com.android.databinding:compiler:3.6.3"
+    implementation 'androidx.databinding:viewbinding:3.6.3'
 }
 
 kapt {

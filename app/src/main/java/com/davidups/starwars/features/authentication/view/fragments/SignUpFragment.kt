@@ -1,12 +1,10 @@
 package com.davidups.starwars.features.authentication.view.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.davidups.skell.R
-import com.davidups.skell.core.extensions.showInfoAlertDialog
+import com.davidups.starwars.core.extensions.showInfoAlertDialog
 import com.davidups.starwars.core.platform.BaseFragment
 import com.davidups.skell.databinding.FragmentSignUpBinding
 import com.davidups.starwars.core.extensions.failure

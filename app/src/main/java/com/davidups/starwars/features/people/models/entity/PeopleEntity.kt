@@ -1,6 +1,6 @@
 package com.davidups.skell.features.people.models.entity
 
-import com.davidups.skell.features.people.models.data.People
+import com.davidups.starwars.features.people.models.data.People
 
 data class PeopleEntity(
     var count: Int?,

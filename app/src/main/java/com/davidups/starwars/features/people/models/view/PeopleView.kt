@@ -1,7 +1,8 @@
-package com.davidups.skell.features.people.models.view
+package com.davidups.starwars.features.people.models.view
 
-import com.davidups.skell.features.people.models.data.People
+import com.davidups.starwars.features.people.models.data.People
 import com.davidups.skell.core.extensions.empty
+import com.davidups.skell.features.people.models.view.PersonView
 import java.io.Serializable
 
 data class PeopleView(

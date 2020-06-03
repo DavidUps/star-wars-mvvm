@@ -6,6 +6,7 @@ import com.davidups.skell.BuildConfig
 import com.davidups.skell.core.platform.ContextHandler
 import com.davidups.skell.core.platform.NetworkHandler
 import com.davidups.skell.features.people.view.adapters.PeopleAdapter
+import com.davidups.starwars.features.movies.view.adapters.MovieAdapter
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -45,6 +46,7 @@ val applicationModule = module(override = true) {
     }
 
     factory { PeopleAdapter() }
+    factory { MovieAdapter() }
 }
 
 

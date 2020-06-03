@@ -1,19 +1,17 @@
 package com.davidups.starwars.features.people.view.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.davidups.skell.R
 import com.davidups.starwars.core.extensions.Constants
-import com.davidups.skell.core.extensions.showInfoAlertDialog
+import com.davidups.starwars.core.extensions.showInfoAlertDialog
 import com.davidups.starwars.core.platform.BaseFragment
 import com.davidups.skell.databinding.FragmentPeopleBinding
-import com.davidups.skell.features.people.models.view.PeopleView
+import com.davidups.starwars.features.people.models.view.PeopleView
 import com.davidups.skell.features.people.view.adapters.PeopleAdapter
 import com.davidups.starwars.features.people.view.viewmodels.PeopleViewModel
 import com.davidups.starwars.core.extensions.failure
@@ -46,14 +44,14 @@ class PeopleListFragment : BaseFragment(R.layout.fragment_people) {
 
         initView()
         initListeners()
-        binding.tvName.text
     }
 
     private fun initView() {
         peopleViewmodel.getPeople()
 
+        binding.tvName.text
         binding.rvPeople.apply {
-            layoutManager = GridLayoutManager(activity, 2)
+            layoutManager = GridLayoutManager(requireActivity(), 2)
             adapter = peopleAdapter
         }
     }
@@ -90,6 +88,6 @@ class PeopleListFragment : BaseFragment(R.layout.fragment_people) {
     private fun handleFailure(failure: Throwable?) {
         showInfoAlertDialog {
             setTitle(getString(R.string.common_error))
-        }
+        }.show()
     }
 }

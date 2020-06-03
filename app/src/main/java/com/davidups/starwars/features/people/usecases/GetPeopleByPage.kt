@@ -2,7 +2,7 @@ package com.davidups.skell.features.people.usecases
 
 import com.davidups.starwars.core.functional.State
 import com.davidups.skell.core.interactor.UseCase
-import com.davidups.skell.features.people.models.view.PeopleView
+import com.davidups.starwars.features.people.models.view.PeopleView
 import com.davidups.starwars.features.people.usecases.PeopleRepository
 
 class GetPeopleByPage(private val peopleRepository: PeopleRepository) :

@@ -1,4 +1,4 @@
-package com.davidups.skell.core.extensions
+package com.davidups.starwars.core.extensions
 
 import android.app.AlertDialog
 import androidx.fragment.app.Fragment

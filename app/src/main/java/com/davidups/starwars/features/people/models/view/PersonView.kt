@@ -1,6 +1,6 @@
 package com.davidups.skell.features.people.models.view
 
-import com.davidups.skell.features.people.models.data.Person
+import com.davidups.starwars.features.people.models.data.Person
 import com.davidups.skell.core.extensions.empty
 import java.io.Serializable
 
